@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from 'moment'
+import './shared.css'
 import './closed.css'
 
 export default class Closed extends React.PureComponent {
@@ -35,9 +36,10 @@ export default class Closed extends React.PureComponent {
 
   render() {
     return (
-      <div className="Closed">
+      <div className="Status Closed">
         <div className="emoji-header"><span role="img" aria-label="poop">💩</span></div>
         <h1>Yes</h1>
+        <p className="disclaimer">Note: This assumes 24 hour cleaning time and may not be 100% accurate.</p>
 
         {(() => {
           if (!this.state.showMore) {
