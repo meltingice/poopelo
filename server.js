@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const redis = require('redis');
 const express = require('express');
 
-const redisClient = redis.createClient();
+const redisClient = redis.createClient({ url: process.env.REDIS_URL || "redis://127.0.0.1:6379" });
 const app = express();
 
 const CMG_ENDPOINT = "https://cmgcharleston.com/wp-json/wp/v2/posts?categories=106&per_page=3";
