@@ -1,0 +1,38 @@
+.Closed .emoji-header {
+  text-align: center;
+  font-size: 100px;
+}
+
+.Closed h1 {
+  color: #333;
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 60px;
+}
+
+.Closed .post-link {
+  text-align: center;
+}
+
+.Closed .post-link a {
+  color: #333;
+}
+
+.Closed .show-more {
+  width: 80%;
+  max-width: 500px;
+  margin: 30px auto;
+  border-top: 1px #b2b2b2 solid;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.Closed .show-more p {
+  color: #333;
+  line-height: 1.5em;
+}
+
+.Closed .show-more .post-content p,
+.Closed .show-more .post-content a {
+  color: #333;
+}
