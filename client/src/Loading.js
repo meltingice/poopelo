@@ -3,7 +3,7 @@ import "./loading.css"
 
 const Loading = () => {
   return (
-    <div className="Status Loading">
+    <div className="Loading">
       <h1>Checking...</h1>
     </div>
   )
