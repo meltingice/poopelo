@@ -5,7 +5,8 @@
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "express": "^4.15.3",
-    "node-fetch": "^1.7.1"
+    "node-fetch": "^1.7.1",
+    "redis": "^2.7.1"
   },
   "scripts": {
     "start": "concurrently \"yarn run server\" \"yarn run client\"",

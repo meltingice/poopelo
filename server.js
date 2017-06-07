@@ -1,6 +1,8 @@
 const fetch = require('node-fetch');
+const redis = require('redis');
 const express = require('express');
 
+const redisClient = redis.createClient();
 const app = express();
 
 const CMG_ENDPOINT = "https://cmgcharleston.com/wp-json/wp/v2/posts?categories=106&per_page=3";
@@ -12,9 +14,18 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('/api/latest', (req, res) => {
-  fetch(CMG_ENDPOINT)
-    .then(resp => resp.json())
-    .then(json => res.json(json));
+  redisClient.get('post_cache', (err, data) => {
+    if (data === null) {
+      fetch(CMG_ENDPOINT)
+        .then(resp => resp.json())
+        .then(json => {
+          redisClient.set('post_cache', JSON.stringify(json), 'EX', 600);
+          res.json(json)
+        });
+    } else {
+      res.json(JSON.parse(data));
+    }
+  });
 });
 
 app.listen(app.get('port'), () => {
