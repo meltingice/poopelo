@@ -19,7 +19,7 @@ export default class Closed extends React.PureComponent {
 
   getPostDate() {
     const { post } = this.props;
-    return moment(post.date_gmt).format('MMM D, YYYY H:mm a');
+    return moment(post.date_gmt).format('MMM D, YYYY h:mm a');
   }
 
   getShowMore() {
